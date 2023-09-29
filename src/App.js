@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Classcomponents />
+        <Classcomponents /> {/* called cmponet */}
       </div>
       <div class="main"></div>
     </div>

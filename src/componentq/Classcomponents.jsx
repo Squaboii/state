@@ -8,6 +8,7 @@ export default class Classcomponents extends Component {
       title: "CLICK BUTTON",
       des: "",
       job: "yehdek rabi ",
+      click: 0,
     };
 
     this.affichePhoto = () => {
@@ -24,6 +25,15 @@ export default class Classcomponents extends Component {
       this.setState({
         job: "injinieur",
       });
+      setInterval(
+        (this.handleCounter = () => {
+          this.setState({ click: this.state.click + 1 });
+          {
+            /* Function that reapets it self every SEC*/
+          }
+        }),
+        1000
+      );
     };
   }
   render() {
@@ -35,6 +45,12 @@ export default class Classcomponents extends Component {
             <h1>{this.state.title} </h1>
             <h3>{this.state.des}</h3>
             <h5>{this.state.job}</h5>
+            {this.state.click != 0 ? (
+              <h1>{this.state.click}</h1>
+            ) : (
+              <h1></h1>
+            )}{" "}
+            {/*to not affiche 0*/}
           </div>
         </div>
         <button class="button-80" onClick={this.affichePhoto}>
